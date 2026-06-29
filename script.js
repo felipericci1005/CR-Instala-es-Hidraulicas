@@ -28,7 +28,7 @@ if (anoEl) anoEl.textContent = new Date().getFullYear();
 // ---- 3) Animação de entrada ao rolar a página ----
 const revealTargets = document.querySelectorAll(
   '.service-card, .feature, .testimonial, .about-content, .about-media, ' +
-  '.atuacao-content, .atuacao-card, .section-head, .strip-item'
+  '.atuacao-content, .atuacao-card, .section-head, .strip-item, .trust-item, .step'
 );
 revealTargets.forEach((el) => el.classList.add('reveal'));
 

@@ -162,6 +162,23 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.14; color: var(--
 .visual-badge .icon { width: 18px; height: 18px; color: var(--blue-light); fill: currentColor; stroke: none; }
 @keyframes floaty { 50% { transform: translateY(-12px); } }
 
+/* ---------- Faixa de confiança ---------- */
+.trust-band { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 44px 24px; }
+.trust-item { text-align: center; padding: 0 12px; }
+.trust-item + .trust-item { border-left: 1px solid var(--line); }
+.trust-item .icon { width: 30px; height: 30px; color: var(--blue); margin: 0 auto 14px; }
+.trust-item h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.trust-item p { color: var(--muted); font-size: 14.5px; }
+
+/* ---------- Como funciona (passos) ---------- */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
+.step { position: relative; padding: 34px 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); }
+.step-num { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: #fff; font-family: var(--font-head); font-weight: 800; font-size: 1.15rem; margin-bottom: 18px; }
+.step h3 { font-size: 1.18rem; margin-bottom: 8px; }
+.step p { color: var(--muted); font-size: 15px; }
+.step-line { display: none; }
+
 /* ---------- Faixa de selos ---------- */
 .strip { background: var(--navy); }
 .strip-inner { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 16px 28px; padding: 22px 24px; }
@@ -305,7 +322,9 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.14; color: var(--
   .nav-cta { background: none; color: var(--blue) !important; border-radius: 0; }
   .nav-toggle { display: flex; }
   .section { padding: 62px 0; }
-  .services-grid, .testimonials, .features-grid { grid-template-columns: 1fr; }
+  .services-grid, .testimonials, .features-grid, .steps { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; gap: 32px; }
+  .trust-item + .trust-item { border-left: none; border-top: 1px solid var(--line); padding-top: 32px; }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom .container { justify-content: center; text-align: center; }
   .hero-trust { gap: 22px; }
