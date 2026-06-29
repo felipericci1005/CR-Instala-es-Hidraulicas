@@ -1,0 +1,6 @@
+# Config local do ambiente de desenvolvimento (não precisa no site publicado)
+.claude/
+
+# Sistema operacional
+Thumbs.db
+.DS_Store
