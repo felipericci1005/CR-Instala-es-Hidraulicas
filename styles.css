@@ -221,6 +221,17 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.14; color: var(--
   display: grid; place-items: center;
 }
 .about-photo img { max-height: 220px; width: auto; filter: drop-shadow(0 10px 24px rgba(0,0,0,.35)); }
+.about-card {
+  position: relative; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, #0d2440, #103a6b); padding: 46px 32px; text-align: center;
+}
+.about-card-logo { width: auto; max-height: 108px; margin: 0 auto 24px; filter: drop-shadow(0 8px 20px rgba(0,0,0,.35)); }
+.about-card-name { display: block; font-family: var(--font-head); font-size: 1.32rem; color: #fff; margin-bottom: 6px; }
+.about-card-role { display: block; color: #b9cce0; font-size: 14.5px; margin-bottom: 24px; }
+.about-card-badge {
+  display: inline-block; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
+  color: #fff; font-weight: 600; font-size: 14px; padding: 9px 18px; border-radius: 999px;
+}
 .about-content h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 18px; }
 .about-content p { color: var(--muted); margin-bottom: 16px; font-size: 1.05rem; }
 .about-content strong { color: var(--ink); }
