@@ -238,7 +238,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.14; color: var(--
 /* ---------- Rodapé ---------- */
 .site-footer { background: var(--navy); color: #b9cce0; }
 .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding: 62px 24px 40px; }
-.footer-logo { height: 58px; margin-bottom: 16px; }
+.footer-logo { height: 58px; width: auto; margin-bottom: 16px; }
 .footer-brand p { font-size: 14.5px; max-width: 340px; color: #92a8c0; }
 .footer-col h4 { color: #fff; font-size: 1rem; margin-bottom: 16px; }
 .footer-col ul { list-style: none; display: grid; gap: 10px; }
