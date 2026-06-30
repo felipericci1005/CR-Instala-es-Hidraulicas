@@ -300,7 +300,19 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.14; color: var(--
   .trust-item + .trust-item { border-left: none; border-top: 1px solid var(--line); padding-top: 32px; }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom .container { justify-content: center; text-align: center; }
-  .hero-trust { gap: 22px; }
+  .hero-inner { padding-top: 38px; padding-bottom: 52px; gap: 24px; }
+  .hero h1 { font-size: 2rem; }
+  .hero-sub { font-size: 1.02rem; }
+  .hero-visual { max-width: 235px; }
+  .hero-trust { gap: 20px; }
+  .hero-trust strong { font-size: 1.25rem; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 18px; }
+  .hero h1 { font-size: 1.82rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
