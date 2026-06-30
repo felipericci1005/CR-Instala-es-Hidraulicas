@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://felipericci1005.github.io/CR-Instala-es-Hidraulicas/sitemap.xml
