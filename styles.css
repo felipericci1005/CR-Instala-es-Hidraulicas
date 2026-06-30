@@ -144,22 +144,17 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.14; color: var(--
 .hero-trust span { font-size: 13px; color: #9fb6cf; }
 
 /* Cena 3D (bolha de água) */
-.hero-visual { position: relative; aspect-ratio: 1/1; max-width: 460px; width: 100%; margin: 0 auto; }
+.hero-visual { position: relative; aspect-ratio: 1/1; max-width: 460px; width: 100%; margin: 0 auto; display: grid; place-items: center; }
 .visual-glow {
-  position: absolute; inset: 8%; border-radius: 50%;
-  background: radial-gradient(circle at 50% 45%, rgba(59,169,244,.55), rgba(11,108,180,.15) 55%, transparent 72%);
-  filter: blur(18px); animation: floaty 6s ease-in-out infinite;
+  position: absolute; inset: 6%; border-radius: 50%;
+  background: radial-gradient(circle at 50% 45%, rgba(59,169,244,.6), rgba(11,108,180,.18) 55%, transparent 72%);
+  filter: blur(22px); animation: floaty 6s ease-in-out infinite;
 }
-#blob { position: relative; z-index: 1; width: 100%; height: 100%; display: block; }
-.visual-badge {
-  position: absolute; z-index: 2; bottom: 6%; left: 50%; transform: translateX(-50%);
-  display: inline-flex; align-items: center; gap: 9px;
-  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #fff;
-  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+.hero-logo {
+  position: relative; z-index: 1; width: 88%; max-width: 400px; height: auto; display: block;
+  filter: drop-shadow(0 20px 44px rgba(0,0,0,.5));
+  animation: floaty 6s ease-in-out infinite;
 }
-.visual-badge .icon { width: 18px; height: 18px; color: var(--blue-light); fill: currentColor; stroke: none; }
 @keyframes floaty { 50% { transform: translateY(-12px); } }
 
 /* ---------- Faixa de confiança ---------- */
