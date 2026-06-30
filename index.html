@@ -33,6 +33,7 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -62,6 +63,7 @@
   </script>
 </head>
 <body>
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
   <!-- ============ SPRITE DE ÍCONES (SVG, invisível) ============ -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -89,7 +91,7 @@
   <header class="site-header" id="topo">
     <div class="container header-inner">
       <a href="#topo" class="brand" aria-label="CR Instalações Hidráulicas — início">
-        <img src="assets/logo.png" alt="Logo CR Instalações Hidráulicas" class="brand-logo" />
+        <img src="assets/logo.png" alt="Logo CR Instalações Hidráulicas" class="brand-logo" width="440" height="280" decoding="async" />
         <span class="brand-text">
           <strong>CR</strong>
           <small>Instalações Hidráulicas</small>
@@ -112,6 +114,7 @@
     </div>
   </header>
 
+  <main id="conteudo">
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
@@ -260,7 +263,7 @@
     <div class="container about-inner">
       <div class="about-media">
         <div class="about-card">
-          <img src="assets/logo.png" alt="CR Instalações Hidráulicas" class="about-card-logo" />
+          <img src="assets/logo.png" alt="CR Instalações Hidráulicas" class="about-card-logo" width="440" height="280" loading="lazy" decoding="async" />
           <strong class="about-card-name">Claudinei Riserio de Almeida</strong>
           <span class="about-card-role">Encanador · Presidente Prudente – SP</span>
           <div class="about-card-badge">+30 anos de experiência</div>
@@ -308,11 +311,13 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ============ RODAPÉ ============ -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="assets/logo.png" alt="CR Instalações Hidráulicas" class="footer-logo" />
+        <img src="assets/logo.png" alt="CR Instalações Hidráulicas" class="footer-logo" width="440" height="280" loading="lazy" decoding="async" />
         <p>Encanador profissional em Presidente Prudente e região. Vazamentos, desentupimento, instalações e reparos com qualidade e confiança.</p>
       </div>
       <div class="footer-col">

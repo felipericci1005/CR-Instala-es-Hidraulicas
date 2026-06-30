@@ -44,9 +44,7 @@
     clearcoat: 1.0,
     clearcoatRoughness: 0.15,
     reflectivity: 0.7,
-    transmission: 0.25,
-    thickness: 1.2,
-    ior: 1.33
+    transmission: 0.25
   });
   const blob = new THREE.Mesh(geometry, material);
   group.add(blob);
@@ -105,18 +103,26 @@
     targetY = (e.clientY / window.innerHeight - 0.5) * 0.6;
   });
 
-  // Pausa quando a aba não está visível (economiza bateria)
-  let running = true;
-  document.addEventListener('visibilitychange', () => {
-    running = !document.hidden;
-    if (running && !reduceMotion) requestAnimationFrame(loop);
-  });
+  // Pausa quando a aba some OU quando o hero sai da tela (economiza CPU/bateria)
+  let visible = !document.hidden, onScreen = true, ticking = false;
+  function ensureRunning() {
+    if (visible && onScreen && !reduceMotion && !ticking) {
+      ticking = true;
+      clock.getDelta(); // descarta o tempo parado p/ não dar um "pulo"
+      requestAnimationFrame(loop);
+    }
+  }
+  document.addEventListener('visibilitychange', () => { visible = !document.hidden; ensureRunning(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => { onScreen = entries[0].isIntersecting; ensureRunning(); },
+                            { threshold: 0 }).observe(canvas);
+  }
 
   const clock = new THREE.Clock();
   let t = 0;
 
   function loop() {
-    if (!running) return;
+    if (!visible || !onScreen || reduceMotion) { ticking = false; return; }
     const dt = clock.getDelta();
     t += dt;
 
@@ -126,7 +132,7 @@
     group.rotation.z += (targetX - group.rotation.z) * 0.05;
 
     renderer.render(scene, camera);
-    if (!reduceMotion) requestAnimationFrame(loop);
+    requestAnimationFrame(loop);
   }
 
   if (reduceMotion) {
@@ -134,6 +140,7 @@
     deform(0.6);
     renderer.render(scene, camera);
   } else {
+    ticking = true;
     requestAnimationFrame(loop);
   }
 })();

@@ -1,0 +1,16 @@
+{
+  "name": "CR Instalações Hidráulicas",
+  "short_name": "CR Instalações",
+  "description": "Encanador em Presidente Prudente e região: vazamentos, desentupimento, instalações e reparos.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d2440",
+  "theme_color": "#0d2440",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "assets/favicon.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
