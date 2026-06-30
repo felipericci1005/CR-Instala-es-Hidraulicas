@@ -347,4 +347,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.14; color: var(--
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  /* brilhos da logo são decorativos e suaves (sem movimento brusco) — mantidos */
+  .c-flow       { animation: cflow 3s linear infinite !important; }
+  .drop-glow    { animation: dropGlow 2.6s ease-in-out infinite !important; }
+  .wrench-shine { animation: wrenchShine 4.8s ease-in-out infinite !important; }
 }
