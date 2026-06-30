@@ -153,18 +153,37 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.14; color: var(--
   filter: blur(26px);
 }
 .hero-logo { position: relative; z-index: 1; width: 100%; height: auto; display: block; filter: drop-shadow(0 18px 40px rgba(0,0,0,.5)); }
-/* água escorrendo dentro do cano em "C" (máscara só do C) */
+/* efeitos animados mascarados sobre a logo (cada um na forma da sua peça) */
+.c-flow, .drop-glow, .wrench-shine {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none; mix-blend-mode: screen;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  -webkit-mask-position: center; mask-position: center;
+}
+/* água escorrendo dentro do cano em "C" */
 .c-flow {
-  position: absolute; inset: 0; z-index: 2; pointer-events: none;
-  -webkit-mask: url(assets/c-mask.png) center / 100% 100% no-repeat;
-          mask: url(assets/c-mask.png) center / 100% 100% no-repeat;
-  mix-blend-mode: screen;
+  -webkit-mask-image: url(assets/c-mask.png); mask-image: url(assets/c-mask.png);
   background: linear-gradient(180deg, rgba(200,238,255,0) 35%, rgba(205,240,255,.85) 50%, rgba(200,238,255,0) 65%);
-  background-size: 100% 240%;
-  background-position: 0 -120%;
+  background-size: 100% 240%; background-position: 0 -120%;
   animation: cflow 3s linear infinite;
 }
 @keyframes cflow { 0% { background-position: 0 -120%; } 100% { background-position: 0 120%; } }
+/* gota da logo brilhando suavemente */
+.drop-glow {
+  -webkit-mask-image: url(assets/mask-drop.png); mask-image: url(assets/mask-drop.png);
+  background: radial-gradient(circle at 50% 40%, rgba(228,247,255,.95), rgba(170,225,255,.25) 58%, transparent 74%);
+  opacity: .15;
+  animation: dropGlow 2.6s ease-in-out infinite;
+}
+@keyframes dropGlow { 0%, 100% { opacity: .12; } 50% { opacity: .82; } }
+/* reflexo metálico varrendo a chave do "R" */
+.wrench-shine {
+  -webkit-mask-image: url(assets/mask-wrench.png); mask-image: url(assets/mask-wrench.png);
+  background: linear-gradient(115deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.9) 50%, rgba(255,255,255,0) 60%);
+  background-size: 260% 100%; background-position: 130% 0;
+  animation: wrenchShine 4.8s ease-in-out infinite;
+}
+@keyframes wrenchShine { 0% { background-position: 130% 0; } 55%, 100% { background-position: -60% 0; } }
 .hero-reflection {
   width: 90%; max-width: 400px; height: auto; margin-top: 0.5%;
   transform: scaleY(-1); opacity: .3;
